@@ -358,6 +358,37 @@ class ScryptMixin(object):
         else:
             return cls.HEADER_HASH(header)
 
+class Pac(Coin):
+    NAME = "PAC"
+    SHORTNAME = "PAC"
+    NET = "mainnet"
+    XPUB_VERBYTES = bytes.fromhex("0488B21E") 
+    XPRV_VERBYTES = bytes.fromhex("0488ADE4") 
+    GENESIS_HASH = ('00000354655ff039a51273fe61d3b493'
+                    'bd2897fe6c16f732dbc4ae19f04b789e')
+    P2PKH_VERBYTE = bytes.fromhex("37")
+    P2SH_VERBYTES = [bytes.fromhex("0A")]
+    WIF_BYTE = bytes.fromhex("ef")
+    #TX_COUNT_HEIGHT = 569399 #
+    #TX_COUNT = 2157510 #
+    #TX_PER_BLOCK = 4 #
+    RPC_PORT = 7111
+    #PEERS = [
+    #    'electrum.dash.org s t',
+    #    'electrum.masternode.io s t',
+    #    'electrum-drk.club s t',
+    #    'dashcrypto.space s t',
+    #    'electrum.dash.siampm.com s t',
+    #    'wl4sfwq2hwxnodof.onion s t',
+    #]
+    SESSIONCLS = PacElectrumX
+    DAEMON = daemon.PacDaemon
+
+    @classmethod
+    def header_hash(cls, header):
+        '''Given a header return the hash.'''
+        import x11_hash
+        return x11_hash.getPoWHash(header)
 
 class KomodoMixin(object):
     P2PKH_VERBYTE = bytes.fromhex("3C")
