@@ -369,9 +369,9 @@ class Pac(Coin):
     P2PKH_VERBYTE = bytes.fromhex("37")
     P2SH_VERBYTES = [bytes.fromhex("0A")]
     WIF_BYTE = bytes.fromhex("ef")
-    #TX_COUNT_HEIGHT = 569399 #
-    #TX_COUNT = 2157510 #
-    #TX_PER_BLOCK = 4 #
+    TX_COUNT_HEIGHT = 14939 
+    TX_COUNT = 23708 
+    TX_PER_BLOCK = 2 
     RPC_PORT = 7111
     #PEERS = [
     #    'electrum.dash.org s t',
