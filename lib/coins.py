@@ -376,6 +376,8 @@ class Pac(Coin):
     PEERS = []
     SESSIONCLS = PacElectrumX
     DAEMON = daemon.PacDaemon
+    ESTIMATE_FEE = 0.00001
+    RELAY_FEE = 0.00001
     #PEER_DEFAULT_PORTS = {'t': '52001', 's': '52002'}
 
     @classmethod
