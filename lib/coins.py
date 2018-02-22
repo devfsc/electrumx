@@ -373,16 +373,10 @@ class Pac(Coin):
     TX_COUNT = 23708 
     TX_PER_BLOCK = 2 
     RPC_PORT = 7111
-    #PEERS = [
-    #    'electrum.dash.org s t',
-    #    'electrum.masternode.io s t',
-    #    'electrum-drk.club s t',
-    #    'dashcrypto.space s t',
-    #    'electrum.dash.siampm.com s t',
-    #    'wl4sfwq2hwxnodof.onion s t',
-    #]
+    PEERS = []
     SESSIONCLS = PacElectrumX
     DAEMON = daemon.PacDaemon
+    #PEER_DEFAULT_PORTS = {'t': '52001', 's': '52002'}
 
     @classmethod
     def header_hash(cls, header):
